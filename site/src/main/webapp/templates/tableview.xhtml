@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core"
+
+      xmlns:ct="http://java.sun.com/jsf/composite/composite">
+
+<h:body>
+    <ui:composition>
+        <h:form>
+            <p:dataTable var="article" value="#{table.articleList}">
+                <p:column headerText="Creation date" sortBy="#{article.creationDate}">
+                    <h:outputText value="#{article.creationDate}"/>
+                </p:column>
+
+                <p:column headerText="Author">
+                    <h:outputText value="#{article.author}"/>
+                </p:column>
+
+                <p:column headerText="Header">
+                    <p:commandLink actionListener="#{table.selectArticle(article)}">
+                        <h:outputText value="#{article.header}"/>
+                    </p:commandLink>
+                </p:column>
+
+                <p:column headerText="Content" width="300">
+                    <div style="width: 300px">
+                        <h:outputText value="#{table.receiveTopXSentences(article)}"/>
+                    </div>
+                </p:column>
+                <p:column headerText="Ammount comments">
+                    <h:outputText value="#{article.commentsamount}"/>
+                </p:column>
+                <p:column headerText="More">
+                    <p:commandButton value="more" actionListener="#{table.selectArticle(article)}"/>
+                </p:column>
+            </p:dataTable>
+
+
+        </h:form>
+        <p:dialog id="articledialog" header="Article"
+                  widgetVar="aticleDialog"
+                  modal="true"
+                  showEffect="fade"
+                  hideEffect="fade"
+                  resizable="false"
+                  appendToBody="true"
+                >
+
+            <h:form id="dialogarticle" style="width: 600px; height: 700px;">
+
+                <p:panel>
+                <h:outputText value="#{articleBean.selected.content}" escape="false"/>
+                </p:panel>
+                <br/> <br/>
+
+
+                <ui:repeat value="#{articleBean.selected.commentList}" var="comment">
+                    <p:outputPanel dynamic="true">
+                        <h:outputText value="#{comment.from} wrote:  "/>
+                        <br/>
+                        <h:outputText value="#{comment.body}"/>
+                        <br/>
+                        <h:outputText value="#{comment.date}"/>
+                    </p:outputPanel>
+                   <br/><br/>
+                </ui:repeat>
+
+
+                <p:inputTextarea id="commenteditor" rows="6" cols="50" value="#{commentBean.body}"/>
+                <br/><br/>
+
+
+
+                <p:outputLabel value="Author name:   "/>
+
+                <p:inputText value="#{commentBean.from}" style=" width:300px"/>
+
+                <br/>
+                <p:commandButton value="Reply"
+                                 actionListener="#{articleBean.addComment}"
+                                 update="@form"/>
+
+                <p:commandButton value="Cancel" type="button" onclick="aticleDialog.hide();" ajax="false"/>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</h:body>
+
+</html>

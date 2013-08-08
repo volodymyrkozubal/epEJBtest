@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+    <ui:composition>
+        <p:accordionPanel style="color: #000000;" activeIndex="-1">
+            <p:tab title="Add new Article">
+
+                <h:form id="newArticle">
+
+                        <h:panelGrid columns="1" >
+
+                            <p:inputText value="#{articleBean.header}" style=" width:600px"/>
+
+                            <p:editor id="editor" value="#{articleBean.content}" width="600"/>
+
+
+                            <p:inputText  value="#{articleBean.author}" style=" width:600px"/>
+
+
+                            <p:commandButton id = "publish" value="Publish" actionListener="#{table.addnewArticle}" ajax="false"/>
+                        </h:panelGrid>
+                </h:form>
+
+            </p:tab>
+        </p:accordionPanel>
+
+    </ui:composition>
+</h:body>
+</html>

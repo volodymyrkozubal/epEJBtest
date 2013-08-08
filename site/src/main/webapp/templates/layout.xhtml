@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head> </h:head>
+<h:body style="margin: 0 15px;  width: 90%; position: relative; left: 50px; background: #d8d8d8;">
+
+        <h:panelGrid  id= "articlelistpanel">
+            <ui:insert name="articletable">
+                <ui:include src="/templates/tableview.xhtml"/>
+            </ui:insert>
+        </h:panelGrid>
+
+        <h:panelGrid id = "addarticlepanel">
+            <ui:insert name="addnewarticle" style="text-align: center">
+                <ui:include src="/templates/newArticle.xhtml"/>
+            </ui:insert>
+        </h:panelGrid>
+
+</h:body>
+</html>
