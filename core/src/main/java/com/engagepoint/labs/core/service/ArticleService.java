@@ -5,15 +5,15 @@ import com.engagepoint.labs.core.model.Article;
 /**
  * @author volodymyr.kozubal  <volodymyr.kozubal@engagepoint.com>
  */
-public interface CMISService {
+public interface ArticleService {
     /**
      * receive first sentences of article content
      *
      * @param article article object in which content is located {@link Article}
-     * @param number  number of sentences
-     * @return first  number sentences
+     * @param x  number of sentences
+     * @return first x sentences from Article content
      */
-    public String receiveTopXSentences(Article article, int number);
+    public String receiveTopXSentences(Article article, int x);
 
     /**
      * create new article

@@ -21,12 +21,12 @@ public class Index extends AbstractPage {
     }
 
     public void clicknewArticlebutton() {
-        findElement(By.xpath("//*[@id=\"j_idt40\"]")).click();
+        findElement(By.xpath(".//*[@id='j_idt38']")).click();
         manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         sleepOnJBehave();
     }
     public void clickPublishButton() {
-        findElement(By.xpath("//*[@id=\"j_idt40\"]")).click();
+        findElement(By.xpath(".//*[@id='j_idt38']")).click();
         manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         sleepOnJBehave();
     }
