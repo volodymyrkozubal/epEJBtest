@@ -62,7 +62,7 @@
 
                 <ui:repeat value="#{articleBean.selected.commentList}" var="comment">
                     <p:outputPanel dynamic="true">
-                        <h:outputText value="#{comment.from} wrote:  "/>
+                        <h:outputText value="#{comment.c_author} wrote:  "/>
                         <br/>
                         <h:outputText value="#{comment.body}"/>
                         <br/>
@@ -76,7 +76,7 @@
 
                 <p:outputLabel value="Author name:   "/>
 
-                <p:inputText value="#{commentBean.from}" style=" width:300px"/>
+                <p:inputText value="#{commentBean.c_author}" style=" width:300px"/>
 
                 <br/>
                 <p:commandButton value="Reply"

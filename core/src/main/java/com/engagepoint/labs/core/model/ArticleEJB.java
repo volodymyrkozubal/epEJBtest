@@ -1,6 +1,5 @@
-package com.engagepoint.com.web.controllers;
+package com.engagepoint.labs.core.model;
 
-import com.engagepoint.labs.core.model.Article;
 import lombok.extern.java.Log;
 
 import javax.ejb.Stateless;

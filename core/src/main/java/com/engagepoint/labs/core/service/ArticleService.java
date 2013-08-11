@@ -1,10 +1,11 @@
 package com.engagepoint.labs.core.service;
 
+
 import com.engagepoint.labs.core.model.Article;
 
 /**
- * @author volodymyr.kozubal  <volodymyr.kozubal@engagepoint.com>
- */
+* @author volodymyr.kozubal  <volodymyr.kozubal@engagepoint.com>
+*/
 public interface ArticleService {
     /**
      * receive first sentences of article content

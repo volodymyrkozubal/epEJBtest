@@ -1,8 +1,7 @@
 package com.engagepoint.labs.core.model;
 
+
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,10 +13,13 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name = "findAllArticles", query = "SELECT a FROM Article a")
-public  @Data class Article {
+public
+@Data
+class Article {
     @Id
     @GeneratedValue
     private Long id;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
     private String content;
     private int commentsamount;
@@ -28,5 +30,12 @@ public  @Data class Article {
 
     public Article() {
         commentList = new ArrayList<Comment>();
+    }
+
+    public Article(String content, String author, String header) {
+        this.author = author;
+        this.content = content;
+        this.header = header;
+        this.creationDate = new Date();
     }
 }

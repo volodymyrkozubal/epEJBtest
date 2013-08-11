@@ -1,11 +1,10 @@
 package com.engagepoint.com.web.controllers;
 
 import com.engagepoint.labs.core.model.Article;
+import com.engagepoint.labs.core.model.ArticleEJB;
 import com.engagepoint.labs.core.service.ArticleService;
 import com.engagepoint.labs.core.service.ArticleServiceImpl;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.primefaces.context.RequestContext;
 
 import javax.ejb.EJB;
@@ -30,18 +29,18 @@ public class ArticleController implements Serializable {
     private ArticleEJB articleEJB;
     private Article article;
 
-    private List<Article> articleList = new ArrayList<Article>();;
+    private List<Article> articleList = new ArrayList<Article>();
     private ArticleService articleService;
     private int sentencesNumber;
 
     public ArticleController() {
+//        articleList = articleEJB.findArticles();
         articleService = ArticleServiceImpl.getService();
         sentencesNumber = 3;
     }
 
     public void addnewArticle() {
-
-        article = articleService.createArticle(articleBean.getContent(), articleBean.getAuthor(), articleBean.getHeader());
+        article = new Article(articleBean.getContent(), articleBean.getAuthor(), articleBean.getHeader());
         articleEJB.createArticle(article);
         articleList = articleEJB.findArticles();
     }

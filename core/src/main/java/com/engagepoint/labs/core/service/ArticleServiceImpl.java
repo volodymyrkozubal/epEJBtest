@@ -1,6 +1,7 @@
 package com.engagepoint.labs.core.service;
 
 import com.engagepoint.labs.core.dao.*;
+
 import com.engagepoint.labs.core.model.Article;
 import org.jsoup.Jsoup;
 
@@ -10,8 +11,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- * @author volodymyr.kozubal
- */
+* @author volodymyr.kozubal
+*/
 
 public class ArticleServiceImpl implements ArticleService {
 
@@ -45,8 +46,8 @@ public class ArticleServiceImpl implements ArticleService {
     /**
      * {@inheritDoc}
      */
-    public Boolean addComment(Article article, String body, String from) {
-        return articleDao.addComment(article, body, from);
+    public Boolean addComment(Article article, String body, String c_author) {
+        return articleDao.addComment(article, body, c_author);
     }
     /**
      * parse plain text from html

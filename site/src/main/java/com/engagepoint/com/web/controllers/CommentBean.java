@@ -17,5 +17,5 @@ import java.io.Serializable;
 
 public @Data class  CommentBean implements Serializable{
     private String body;
-    private String from;
+    private String c_aurhor;
 }

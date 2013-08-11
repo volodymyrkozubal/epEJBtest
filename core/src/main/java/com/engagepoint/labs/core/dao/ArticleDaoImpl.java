@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author volodymyr.kozubal
- */
+* @author volodymyr.kozubal
+*/
 public class ArticleDaoImpl implements ArticleDao {
 
     public ArticleDaoImpl() {
@@ -23,11 +23,11 @@ public class ArticleDaoImpl implements ArticleDao {
      * {@inheritDoc}
      */
     @Override
-    public Boolean addComment(Article article, String body, String from) {
+    public Boolean addComment(Article article, String body, String c_author) {
         Comment comment = new Comment();
         comment.setBody(body);
         comment.setDate(new Date());
-        comment.setFrom(from);
+        comment.setC_author(c_author);
         incrementComments(article);
         article.getCommentList().add(comment);
         return true;

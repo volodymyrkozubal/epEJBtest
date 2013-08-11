@@ -1,10 +1,11 @@
 package com.engagepoint.labs.core.dao;
 
-import com.engagepoint.labs.core.model.*;
+import com.engagepoint.labs.core.*;
+import com.engagepoint.labs.core.model.Article;
 
 /**
- * @author volodymyr.kozubal
- */
+* @author volodymyr.kozubal
+*/
 public interface ArticleDao {
 
     /**
