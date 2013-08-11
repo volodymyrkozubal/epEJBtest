@@ -1,11 +1,8 @@
-package com.engagepoint.labs.core.model;
+package com.engagepoint.com.web.controllers;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 import java.util.Date;
 
 /**

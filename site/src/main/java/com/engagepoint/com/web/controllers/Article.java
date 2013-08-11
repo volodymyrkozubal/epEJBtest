@@ -1,8 +1,6 @@
-package com.engagepoint.labs.core.model;
+package com.engagepoint.com.web.controllers;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -23,10 +21,10 @@ public  @Data class Article {
     private int commentsamount;
     private String author;
     private String header;
-    @ElementCollection
-    private List<Comment> commentList;
+//    @ElementCollection
+//    private List<Comment> commentList;
 
-    public Article() {
-        commentList = new ArrayList<Comment>();
-    }
+//    public Article() {
+        //commentList = new ArrayList<Comment>();
+//    }
 }
