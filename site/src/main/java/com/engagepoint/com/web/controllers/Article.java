@@ -1,4 +1,4 @@
-package com.engagepoint.labs.core.model;
+package com.engagepoint.com.web.controllers;
 
 
 import lombok.Data;
@@ -25,9 +25,10 @@ class Article {
     private int commentsamount;
     private String author;
     private String header;
-    @ElementCollection
-    private List<Comment> commentList;
+//    @ElementCollection
+//    private List<Comment> commentList;
 
+<<<<<<< HEAD:core/src/main/java/com/engagepoint/labs/core/model/Article.java
     public Article() {
         commentList = new ArrayList<Comment>();
     }
@@ -38,4 +39,9 @@ class Article {
         this.header = header;
         this.creationDate = new Date();
     }
+=======
+//    public Article() {
+        //commentList = new ArrayList<Comment>();
+//    }
+>>>>>>> 6b813e8640aab0961d71afad92be8d96be049027:site/src/main/java/com/engagepoint/com/web/controllers/Article.java
 }
